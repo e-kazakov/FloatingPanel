@@ -66,7 +66,6 @@ class FloatingPanel: NSObject, UIGestureRecognizerDelegate, UIScrollViewDelegate
         viewcontroller = vc
 
         surfaceView = FloatingPanelSurfaceView()
-        surfaceView.backgroundColor = .white
 
         backdropView = FloatingPanelBackdropView()
         backdropView.backgroundColor = .black
