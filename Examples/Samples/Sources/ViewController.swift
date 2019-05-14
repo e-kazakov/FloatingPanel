@@ -121,7 +121,7 @@ class SampleListViewController: UIViewController {
         mainPanelVC.delegate = self
 
         // Initialize FloatingPanelController and add the view
-        mainPanelVC.surfaceView.cornerRadius = 6.0
+        mainPanelVC.surfaceView.cornerRadiusValue = 6.0
         mainPanelVC.surfaceView.shadowHidden = false
 
         // Set a content view controller
@@ -193,7 +193,7 @@ class SampleListViewController: UIViewController {
         settingsPanelVC = FloatingPanelController()
 
         // Initialize FloatingPanelController and add the view
-        settingsPanelVC.surfaceView.cornerRadius = 6.0
+        settingsPanelVC.surfaceView.cornerRadiusValue = 6.0
         settingsPanelVC.surfaceView.shadowHidden = false
         settingsPanelVC.isRemovalInteractionEnabled = true
 
@@ -257,7 +257,7 @@ extension SampleListViewController: UITableViewDelegate {
             detailPanelVC = FloatingPanelController()
 
             // Initialize FloatingPanelController and add the view
-            detailPanelVC.surfaceView.cornerRadius = 6.0
+            detailPanelVC.surfaceView.cornerRadiusValue = 6.0
             detailPanelVC.surfaceView.shadowHidden = false
 
             // Set a content view controller
@@ -290,7 +290,7 @@ extension SampleListViewController: UITableViewDelegate {
             fpc.set(contentViewController: contentVC)
             fpc.delegate = self
 
-            fpc.surfaceView.cornerRadius = 38.5
+            fpc.surfaceView.cornerRadiusValue = 38.5
             fpc.surfaceView.shadowHidden = false
 
             fpc.isRemovalInteractionEnabled = true
@@ -747,7 +747,7 @@ class ModalViewController: UIViewController, FloatingPanelControllerDelegate {
         fpc.delegate = self
 
         // Initialize FloatingPanelController and add the view
-        fpc.surfaceView.cornerRadius = 6.0
+        fpc.surfaceView.cornerRadiusValue = 6.0
         fpc.surfaceView.shadowHidden = false
 
         // Set a content view controller and track the scroll view
@@ -835,7 +835,7 @@ class TabBarContentViewController: UIViewController {
         fpc.delegate = self
 
         // Initialize FloatingPanelController and add the view
-        fpc.surfaceView.cornerRadius = 6.0
+        fpc.surfaceView.cornerRadiusValue = 6.0
         fpc.surfaceView.shadowHidden = false
 
         // Set a content view controller and track the scroll view

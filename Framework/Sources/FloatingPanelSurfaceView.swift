@@ -49,7 +49,7 @@ public class FloatingPanelSurfaceView: UIView {
     ///
     /// `self.contentView` is masked with the top rounded corners automatically on iOS 11 and later.
     /// On iOS 10, they are not automatically masked because of a UIVisualEffectView issue. See https://forums.developer.apple.com/thread/50854
-    public var cornerRadius: CGFloat = 0.0 { didSet { setNeedsLayout() } }
+    public var cornerRadiusValue: CGFloat = 0.0 { didSet { setNeedsLayout() } }
 
     /// A Boolean indicating whether the surface shadow is displayed.
     public var shadowHidden: Bool = false  { didSet { setNeedsLayout() } }
@@ -165,9 +165,9 @@ public class FloatingPanelSurfaceView: UIView {
     private func updateLayers() {
         containerView.backgroundColor = color
 
-        if cornerRadius != 0.0, containerView.layer.cornerRadius != cornerRadius {
+        if cornerRadiusValue != 0.0, containerView.layer.cornerRadius != cornerRadiusValue {
             containerView.layer.masksToBounds = true
-            containerView.layer.cornerRadius = cornerRadius
+            containerView.layer.cornerRadius = cornerRadiusValue
         }
 
         if shadowHidden == false {
@@ -180,8 +180,8 @@ public class FloatingPanelSurfaceView: UIView {
 
     private func updateContentViewMask() {
         guard
-            cornerRadius != 0.0,
-            containerView.layer.cornerRadius != cornerRadius
+            cornerRadiusValue != 0.0,
+            containerView.layer.cornerRadius != cornerRadiusValue
             else { return }
 
         if #available(iOS 11, *) {
@@ -189,7 +189,7 @@ public class FloatingPanelSurfaceView: UIView {
             // for the bottom overflow like Auto Layout settings of UIVisualEffectView in Main.storyboard of Example/Maps.
             // Because the bottom of contentView must be fit to the bottom of a screen to work the `safeLayoutGuide` of a content VC.
             containerView.layer.masksToBounds = true
-            containerView.layer.cornerRadius = cornerRadius
+            containerView.layer.cornerRadius = cornerRadiusValue
             containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         } else {
             // Don't use `contentView.layer.mask` because of a UIVisualEffectView issue in iOS 10, https://forums.developer.apple.com/thread/50854

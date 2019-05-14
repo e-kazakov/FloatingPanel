@@ -27,7 +27,7 @@ class ViewController: UIViewController, FloatingPanelControllerDelegate {
 
         // Initialize FloatingPanelController and add the view
         fpc.surfaceView.backgroundColor = UIColor(displayP3Red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)
-        fpc.surfaceView.cornerRadius = 24.0
+        fpc.surfaceView.cornerRadiusValue = 24.0
         fpc.surfaceView.shadowHidden = true
         fpc.surfaceView.borderWidth = 1.0 / traitCollection.displayScale
         fpc.surfaceView.borderColor = UIColor.black.withAlphaComponent(0.2)

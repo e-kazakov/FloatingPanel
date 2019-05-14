@@ -21,7 +21,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, 
 
         // Initialize FloatingPanelController and add the view
         fpc.surfaceView.backgroundColor = .clear
-        fpc.surfaceView.cornerRadius = 9.0
+        fpc.surfaceView.cornerRadiusValue = 9.0
         fpc.surfaceView.shadowHidden = false
 
         searchVC = storyboard?.instantiateViewController(withIdentifier: "SearchPanel") as? SearchPanelViewController
